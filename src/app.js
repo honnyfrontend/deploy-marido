@@ -19,6 +19,13 @@ connectDB();
 // Routes
 app.use('/api/cards', cardRoutes);
 
+
+app.get('/', (req, res) => {
+  res.send('API está rodando!');
+});
+
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
