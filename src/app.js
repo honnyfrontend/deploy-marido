@@ -8,7 +8,16 @@ import cors from 'cors';
 dotenv.config(); // Carrega as variáveis de ambiente do arquivo .env
 
 const app = express();
-app.use(cors()); 
+const cors = require('cors');
+
+// Substitua pelo domínio do seu front-end Render
+const allowedOrigins = ['https://marido-segunda-chance-xn9p.onrender.com'];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 // Middleware
 app.use(express.json());
